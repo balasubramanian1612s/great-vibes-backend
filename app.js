@@ -10,6 +10,6 @@ app.use(express.json());
 app.use("/api/users", userRouter);
 app.use("/api/movies", movieRouter);
 
-app.listen(process.env.APP_PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log("Up and running");
 });
