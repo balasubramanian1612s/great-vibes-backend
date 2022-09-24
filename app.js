@@ -7,9 +7,13 @@ require("dotenv").config();
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.status(200).send("Hello server is running").end();
+});
+
 app.use("/api/users", userRouter);
 app.use("/api/movies", movieRouter);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("Up and running");
 });
